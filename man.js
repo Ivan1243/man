@@ -27,10 +27,10 @@ class Classmate extends Man {
         super.info()
     }
    AllThings () {
-        console.log(this.things);
+        console.log(" У него есть " + this.things);
    }
 }
-var cm = new Classmate('Jack', 15, true, ['ball', 'computer'])
+var cm = new Classmate('Jack', 13, true, ['ball', 'computer'])
 cm.info();
 cm.AllThings();
 
@@ -39,12 +39,13 @@ class Things {
     constructor (name, type, color){
         this.name = name;
         this.type = type;
-        this.things = things;
+        this.color = color;
     }
     things () {
-        this.things = ['мяч', 'зубная щётка', 'яблоко'];
-        console.log(this.things.length);
+        console.log(" У него есть " + t.name + " он " + t.type + ", " + t.color);
+        console.log(" Также у него есть " + h.name + " это " + h.type " имеет " + h.color + " цвет " );
     }
 }
-var t = new Things();
-t.things()
+var t = new Things("мяч", "футбольный", "чёрный и белый");
+var h = new Things("яблоко", "еда", "зелёный");
+h.things()
