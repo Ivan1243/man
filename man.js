@@ -1,3 +1,18 @@
+class Thing {
+    constructor (name, type, color){
+        this.name = name;
+        this.type = type;
+        this.color = color;
+    }
+    info () {
+        console.log(" Это " + this.name + " он " + this.type + " имеет " + this.color + " цвет");
+    }
+}
+var t = new Thing("мяч", "футбольный", "чёрный и белый");
+t.info();
+
+
+
 class Man {
     constructor (name, age, gender) {
         this.name = name;
@@ -18,6 +33,10 @@ var woman = new Man('Mary', 15, false);
 man.info();
 woman.info();
 
+
+
+
+
 class Classmate extends Man {
     constructor (name, age, gender, things) {
         super(name, age, gender);
@@ -25,27 +44,41 @@ class Classmate extends Man {
     }
     info () {
         super.info()
+        console.log(" У него " + this.things.length + " вещи: "   )
+        for (var i = 0; i < this.things.length; i++) { 
+            console.log(this.things[i]) }
     }
-   AllThings () {
-        console.log(" У него есть " + this.things);
-   }
+//    SortedArray () {}
+    
+    addThing(t) {
+        this.things.push(t);
+    }
 }
-var cm = new Classmate('Jack', 13, true, ['ball', 'computer'])
+var cm = new Classmate('Jack', 13, true, [new Thing('мяч', 'футбольный', 'белый'), new Thing('компьютер', 'техника', 'чёрный')])
 cm.info();
-cm.AllThings();
+cm.addThing(new Thing['мяч', 'баскетбольный', 'коричневый']);
 
 
-class Things {
-    constructor (name, type, color){
+
+class Class {
+    constructor(name, cmname, lateness) {
         this.name = name;
-        this.type = type;
-        this.color = color;
+        this.cmname = cmname;
+        this.lateness = lateness;
     }
-    things () {
-        console.log(" У него есть " + t.name + " он " + t.type + ", " + t.color);
-        console.log(" Также у него есть " + h.name + " это " + h.type " имеет " + h.color + " цвет " );
+    
+    info() {
+        if (this.lateness) {
+            console.log(' Опоздал/а ');
+        }
+        else {
+            console.log(' Не опоздал/а ');
+    }
+          console.log(" В классе " + this.cmname.length + " человек: "   )
+        for (var i = 0; i < this.cmname.length; i++) { 
+            console.log(this.cmname[i]) }
     }
 }
-var t = new Things("мяч", "футбольный", "чёрный и белый");
-var h = new Things("яблоко", "еда", "зелёный");
-h.things()
+var c = new Class('7C', )
+
+
