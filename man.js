@@ -56,7 +56,7 @@ class Classmate extends Man {
 }
 var cm = new Classmate('Jack', 13, true, [new Thing('мяч', 'футбольный', 'белый'), new Thing('компьютер', 'техника', 'чёрный')])
 cm.info();
-cm.addThing(new Thing['мяч', 'баскетбольный', 'коричневый']);
+//cm.addThing(new Thing['мяч', 'баскетбольный', 'коричневый']);
 
 
 
@@ -67,7 +67,7 @@ class Class {
         this.lateness = lateness;
     }
     
-    info() {
+ info() {
         if (this.lateness) {
             console.log(' Опоздал/а ');
         }
@@ -79,6 +79,5 @@ class Class {
             console.log(this.cmname[i]) }
     }
 }
-var c = new Class('7C', )
-
-
+var m = new Class('7C', ['Mary', 'Gen', 'Santa', 'Andrei', 'John', 'Tom', 'Bobby'], [false, false, true, false, false, true, false] )
+.info()
