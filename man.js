@@ -1,4 +1,6 @@
 
+const sqlite3 = require('sqlite3').verbose();
+
 class Man {
     constructor (name, age, gender) {
         this.name = name;
@@ -71,8 +73,45 @@ class Class {
         for (var i = 0; i < this.cm.length; i++) {
             console.log(this.cm[i]) }
     }
+    
+    readFromDb() {
+        
+        let db = new sqlite3.Database('./class.db');
+        
+        let sql = "SELECT * from classmate";
+        
+        
+        db.all(sql, [], (err, rows) => {
+            if (err) {
+                throw err;
+            }
+            rows.forEach((row) => {
+                console.log(row.id + ". " + row.name + " - " + row.age + ", " + row.gender);
+                
+            });
+        });
+        db.close();
+
+let db1 = new sqlite3.Database('./class.db');
+        
+        let sql1 = "SELECT * from thing";
+        
+        
+        db1.all(sql1, [], (err, rows) => {
+            if (err) {
+                throw err;
+            }
+            rows.forEach((row) => {
+                console.log(row.id + ". " + row.name + " - " + row.color + ", " + row.type);
+                
+            });
+        });
+        db1.close();
+        
+    }
 }
 var c = new Class('7C', [new Classmate('Jack', 13, true, new Thing('мяч', 'футбольный', 'белый')), new Classmate('Alice', 14, false, new Thing('шар', 'воздушный', 'синий'))], 'Polina Andreevna') 
 c.info()
+c.readFromDb()
 
 
